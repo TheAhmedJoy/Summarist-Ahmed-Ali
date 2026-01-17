@@ -1,0 +1,124 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100vh - 60px);
+    padding-bottom: 1.25rem;
+    margin-top: 1rem;
+    background-color: #f7faf9;
+    width: 12.5rem;
+    min-width: 12.5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 1000;
+    transition: all .3s;
+    flex-shrink: 0;
+}
+
+.group {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 6rem;
+}
+
+.group1 {
+    margin-top: 2rem;
+}
+
+
+.linkWrapper {
+    display: flex;
+    align-items: center;
+    height: 2rem;
+    color: #032b41;
+    cursor: pointer;
+    transition: 300ms ease-in-out;
+}
+
+.linkWrapper:hover {
+    background-color: rgb(219, 216, 216);
+}
+
+.link__tab {
+    width: 5px;
+    height: 100%;
+    background-color: transparent;
+    margin-right: 16px;
+}
+
+.active {
+    background-color: #2bd97c;
+}
+
+.linkIconWrapper {
+    width: 24px;
+    height: 24px;
+}
+
+.disabled {
+    cursor: no-drop;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        background: white;
+        transform: translateX(-100%);
+        transition: transform 0.25s ease;
+        z-index: 1000;
+    }
+
+    .open {
+        transform: translateX(0);
+    }
+}
+
+.sidebar {
+    width: 16rem;
+    flex-shrink: 0;
+    background: #f7fbfb;
+}
+
+.open, .closed {
+    transform: none;
+}
+
+.closeBtn {
+    display: none;
+    border: none;
+    background: transparent;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+@media (max-width: 48rem) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        z-index: 60;
+        transform: translateX(-110%);
+        transition: transform 200ms ease;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .open {
+        transform: translateX(0);
+    }
+
+    .closed {
+        transform: translateX(-110%);
+    }
+
+    .closeBtn {
+        display: inline-flex;
+        margin: 1rem;
+    }
+}
