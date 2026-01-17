@@ -1,0 +1,207 @@
+
+
+.row {
+  margin-left: 18rem;
+  margin-top: 4rem; 
+  width: 100%;
+  max-width: 60rem;
+}
+.container {
+  width: 75%;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.skeletonBlock {
+  background: linear-gradient(
+    90deg,
+    #e6e6e6 25%,
+    #f2f2f2 37%,
+    #e6e6e6 63%
+  );
+  background-size: 400% 100%;
+  animation: skeleton-loading 1.4s ease infinite;
+  border-radius: 0.5rem;
+}
+
+.skeletonCard {
+  pointer-events: none;
+}
+
+.skeletonSubtitle {
+  height: 1rem;
+  width: 60%;
+  margin-bottom: 1rem;
+}
+
+.skeletonBookline {
+  height: 0.75rem;
+  width: 40%;
+  margin-bottom: 1.5rem;
+}
+
+.skeletonImg {
+  width: 140px;
+  height: 200px;
+  border-radius: 0.75rem;
+}
+
+.skeletonTitle {
+  height: 1.25rem;
+  width: 70%;
+  margin-bottom: 0.75rem;
+}
+
+.skeletonAuthor {
+  height: 1rem;
+  width: 50%;
+  margin-bottom: 1rem;
+}
+
+.skeletonMeta {
+  height: 0.9rem;
+  width: 35%;
+}
+
+
+
+.foryou__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #032b41;
+  margin-bottom: 1rem;
+}
+
+.foryou__subtitle {
+  font-weight: 300;
+  color: #838889;
+  margin-bottom: 1rem;
+}
+
+
+.selected__book {
+  display: flex;
+  justify-content: space-between;
+  width: calc((100% / 3) * 2);
+  background-color: #fbefd6;
+  border-radius: 4px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  gap: 1.5rem;
+}
+
+.selected__bookcontent {
+display: flex;
+justify-content: center;
+align-items: center;
+width: 60%;
+}
+
+.book__imgwrapper {
+  width: 11rem;
+  height: 11rem;
+  margin-right: 3rem;
+}
+
+.selectedbook__subtitle {
+  color: #032b41;
+  width: 40%;
+}
+
+.selected__bookline {
+  width: 1px;
+  background-color: #bac8ce;
+}
+
+.selected__booktitle {
+  font-weight: 600;
+  color: #032b41;
+  margin-bottom: 0.5rem;
+}
+
+.selected__bookauthor {
+  font-size: 1rem;
+  color: #394547;
+  margin-bottom: 1rem;
+}
+
+.selected__book--duration {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #032b41;
+}
+
+.selected__book--icon svg {
+  width: 3rem;
+  height: 3rem;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+  align-items: center;
+  padding: 0.25rem;
+}
+
+.foryou__recommended--books {
+    display: flex;
+    overflow-x: auto;
+    
+    scroll-snap-type: mandatory;
+    scroll-snap-type: x;
+    margin-bottom: 2rem;
+}
+
+
+
+@media (max-width:768px) {
+  /* .selected__bookcontent {
+    flex-wrap: wrap;
+  }
+  .selected__book {
+    width: 100%;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: left;
+  } */
+  .row {
+    margin-left: 3rem;
+    width: fit-content;
+  }
+
+  /* .container {
+    margin-right: 20rem;
+  } */
+}
+
+@media (max-width:550px) {
+  .selected__book {
+    width: 90%;
+    margin-right: 2rem;
+  }
+  .row {
+    width: 60%;
+  }
+}
+
+@media (max-width: 480px) {
+  .selected__bookcontent {
+    flex-wrap: wrap;
+  }
+
+  .selected__bookline {
+    width: 100px;
+  }
+
+  .selected__book {
+    width: 80%;
+  }
+}
