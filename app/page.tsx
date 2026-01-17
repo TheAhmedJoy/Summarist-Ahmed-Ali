@@ -1,65 +1,305 @@
-import Image from "next/image";
+import Image from "next/image"
+import { AiFillAudio, AiFillBulb, AiFillFileText } from "react-icons/ai"
+import { BiCrown } from "react-icons/bi"
+import { BsStarFill, BsStarHalf } from "react-icons/bs"
+import { RiLeafLine } from "react-icons/ri"
+import Footer from "./components/Footer"
+import LandingPageImage from "../public/landing.png"
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <section id="landing" className="flex items-center justify-center">
+        <div className="container">
+          <div className="row">
+            <div className="landing__wrapper">
+              <div className="landing__content">
+                <div className="landing__content__title">
+                  <h1>
+                    Gain more knowledge <br className="remove--tablet" />
+                    in less time
+                  </h1>
+                </div>
+                <div className="landing__content__subtitle">
+                  <h1 style={{ fontWeight: 300 }}>
+                    Great summaries for busy people,
+                    <br className="remove--tablet" />
+                    individuals who barely have time to read,
+                    <br className="remove--tablet" />
+                    and even people who don’t like to read.
+                  </h1>
+                </div>
+              </div>
+              <figure className="landing__image--mask relative w-full max-w-lg h-90 translate-x-24 md:translate-x-24 translate-y-18.75">
+                <Image src={LandingPageImage} alt="landing" fill sizes="(max-width: 1024px) 112px, 288px" style={{ objectFit: "contain" }} priority />
+              </figure>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section id="features">
+        <div className="container">
+          <div className="row">
+            <div className="section__title">
+              Understand books in few minutes
+            </div>
+            <div className="features__wrapper">
+              <div className="features">
+                <div className="features__icon">
+                  <AiFillFileText />
+                </div>
+                <div className="features__title font-semibold">
+                  Read or listen
+                </div>
+                <div className="features__sub--title">
+                  <h1>
+                    Save time by getting the core ideas from the best books.
+                  </h1>
+                </div>
+              </div>
+              <div className="features">
+                <div className="features__icon">
+                  <AiFillBulb />
+                </div>
+                <div className="features__title font-semibold">
+                  Find your next read
+                </div>
+                <div className="features__sub--title">
+                  <h1>Explore book lists and personalized recommendations.</h1>
+                </div>
+              </div>
+              <div className="features">
+                <div className="features__icon">
+                  <AiFillAudio />
+                </div>
+                <div className="features__title font-semibold">Briefcasts</div>
+                <div className="features__sub--title">
+                  <h1>Gain valuable insights from briefcasts</h1>
+                </div>
+              </div>
+            </div>
+
+            <div className="statistics__wrapper">
+              <div className="statistics__content--header">
+                <div className="statistics__heading">
+                  Enhance your knowledge
+                </div>
+                <div className="statistics__heading">
+                  Achieve greater success
+                </div>
+                <div className="statistics__heading">Improve your health</div>
+                <div className="statistics__heading">
+                  Develop better parenting skills
+                </div>
+                <div className="statistics__heading">Increase happiness</div>
+                <div className="statistics__heading">
+                  Be the best version of yourself!
+                </div>
+              </div>
+
+              <div className="statistics__content--details">
+                <div className="statistics__data">
+                  <div className="statistics__data--number">93%</div>
+                  <div className="statistics__data--title">
+                    of Summarist members <b>significantly increase</b> reading
+                    frequency.
+                  </div>
+                </div>
+                <div className="statistics__data">
+                  <div className="statistics__data--number">96%</div>
+                  <div className="statistics__data--title">
+                    of Summarist members <b>establish better</b> habits.
+                  </div>
+                </div>
+                <div className="statistics__data">
+                  <div className="statistics__data--number">90%</div>
+                  <div className="statistics__data--title">
+                    have made <b>significant positive</b> change to their lives.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="statistics__wrapper">
+              <div className="statistics__content--details statistics__content--details-second">
+                <div className="statistics__data">
+                  <div className="statistics__data--number">91%</div>
+                  <div className="statistics__data--title">
+                    of Summarist members <b>report feeling more productive</b>
+                    after incorporating the service into their daily routine.
+                  </div>
+                </div>
+                <div className="statistics__data">
+                  <div className="statistics__data--number">94%</div>
+                  <div className="statistics__data--title">
+                    of Summarist members have <b>noticed an improvement</b> in
+                    their overall comprehension and retention of information.
+                  </div>
+                </div>
+                <div className="statistics__data">
+                  <div className="statistics__data--number">88%</div>
+                  <div className="statistics__data--title">
+                    of Summarist members <b>feel more informed</b> about current
+                    events and industry trends since using the platform.
+                  </div>
+                </div>
+              </div>
+
+              <div className="statistics__content--header statistics__content--header-second">
+                <div className="statistics__heading">Expand your learning</div>
+                <div className="statistics__heading">Accomplish your goals</div>
+                <div className="statistics__heading">
+                  Strengthen your vitality
+                </div>
+                <div className="statistics__heading">
+                  Become a better caregiver
+                </div>
+                <div className="statistics__heading">Improve your mood</div>
+                <div className="statistics__heading">
+                  Maximize your abilities
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
-  );
+      </section>
+
+      <section id="reviews">
+        <div className="row">
+          <div className="container">
+            <div className="section__title">What our members say</div>
+            <div className="reviews__wrapper">
+              <div className="review">
+                <div className="review__header">
+                  <div className="review__name">Hanna M.</div>
+                  <div className="review__stars">
+                    <BsStarFill />
+                    <BsStarFill />
+                    <BsStarFill />
+                    <BsStarFill />
+                    <BsStarFill />
+                  </div>
+                </div>
+                <div className="review__body">
+                  This app has been a <b>game-changer</b> for me! It's saved me
+                  so much time and effort in reading and comprehending books.
+                  Highly recommend it to all book lovers.
+                </div>
+              </div>
+
+              <div className="review">
+                <div className="review__header">
+                  <div className="review__name">David B.</div>
+                  <div className="review__stars">
+                    <BsStarFill />
+                    <BsStarFill />
+                    <BsStarFill />
+                    <BsStarFill />
+                    <BsStarFill />
+                  </div>
+                </div>
+                <div className="review__body">
+                  I love this app! It provides
+                  <b>concise and accurate summaries</b> of books in a way that
+                  is easy to understand. It's also very user-friendly and
+                  intuitive.
+                </div>
+              </div>
+
+              <div className="review">
+                <div className="review__header">
+                  <div className="review__name">Nathan S.</div>
+                  <div className="review__stars">
+                    <BsStarFill />
+                    <BsStarFill />
+                    <BsStarFill />
+                    <BsStarFill />
+                    <BsStarFill />
+                  </div>
+                </div>
+                <div className="review__body">
+                  This app is a great way to get the main takeaways from a book
+                  without having to read the entire thing.
+                  <b>The summaries are well-written and informative.</b>
+                  Definitely worth downloading.
+                </div>
+              </div>
+
+              <div className="review">
+                <div className="review__header">
+                  <div className="review__name">Ryan R.</div>
+                  <div className="review__stars">
+                    <BsStarFill />
+                    <BsStarFill />
+                    <BsStarFill />
+                    <BsStarFill />
+                    <BsStarFill />
+                  </div>
+                </div>
+                <div className="review__body">
+                  If you're a busy person who
+                  <b>loves reading but doesn't have the time</b> to read every
+                  book in full, this app is for you! The summaries are thorough
+                  and provide a great overview of the book's content.
+                </div>
+              </div>
+            </div>
+            <div className="reviews__btn--wrapper">
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="numbers">
+        <div className="container">
+          <div className="row">
+            <div className="section__title">
+              <h1>Start growing with Summarist now</h1>
+            </div>
+            <div className="numbers__wrapper">
+              <div className="numbers">
+                <div className="numbers__icon">
+                  <BiCrown />
+                </div>
+                <div className="numbers__title">
+                  <h1>3 Million</h1>
+                </div>
+                <div className="numbers__sub--title">
+                  <h2>Downloads on all platforms</h2>
+                </div>
+              </div>
+              <div className="numbers">
+                <div className="numbers__icon numbers__star--icon">
+                  <BsStarFill />
+                  <BsStarFill />
+                  <BsStarFill />
+                  <BsStarFill />
+                  <BsStarHalf />
+                </div>
+                <div className="numbers__title">
+                  <h1>4.5 Stars</h1>
+                </div>
+                <div className="numbers__sub--title">
+                  <h2>Average ratings on iOS and Google Play</h2>
+                </div>
+              </div>
+              <div className="numbers">
+                <div className="numbers__icon">
+                  <RiLeafLine />
+                </div>
+                <div className="numbers__title">
+                  <h1>97%</h1>
+                </div>
+                <div className="numbers__sub--title">
+                  <h2>Of Summarist members create a better reading habit</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </>
+  )
 }
