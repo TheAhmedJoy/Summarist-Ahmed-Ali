@@ -94,7 +94,7 @@ export async function getBookById(id: string): Promise<BookDetail> {
   const url = `${BOOK_ID_BASE}?id=${encodeURIComponent(id)}`
 
   const res = await fetch(url, { cache: "no-store" })
-  const text = await res.text() // read raw body first
+  const text = await res.text()
 
   if (!res.ok) {
     throw new Error(`getBookById failed (${res.status}). URL: ${url}. Body: ${text.slice(0, 200)}`)
@@ -109,4 +109,34 @@ export async function getBookById(id: string): Promise<BookDetail> {
   } catch {
     throw new Error(`getBookById returned non-JSON. URL: ${url}. Body: ${text.slice(0, 200)}`)
   }
+}
+
+export function getBookDuration(audioUrl: string): Promise<number> {
+  if (typeof window === "undefined") {
+    return Promise.resolve(0)
+  }
+
+  return new Promise((resolve, reject) => {
+    const audio = new Audio()
+    audio.preload = "metadata"
+    audio.src = audioUrl
+
+    const cleanup = () => {
+      audio.removeEventListener("loadedmetadata", onLoaded)
+      audio.removeEventListener("error", onError)
+    }
+
+    const onLoaded = () => {
+      cleanup()
+      resolve(Number.isFinite(audio.duration) ? audio.duration : 0)
+    }
+
+    const onError = () => {
+      cleanup()
+      reject(new Error("Failed to load audio metadata"))
+    }
+
+    audio.addEventListener("loadedmetadata", onLoaded)
+    audio.addEventListener("error", onError)
+  })
 }
