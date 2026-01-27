@@ -1,10 +1,12 @@
 import Image from "next/image"
+import Link from "next/link"
 import { AiFillAudio, AiFillBulb, AiFillFileText } from "react-icons/ai"
 import { BiCrown } from "react-icons/bi"
 import { BsStarFill, BsStarHalf } from "react-icons/bs"
 import { RiLeafLine } from "react-icons/ri"
 import Footer from "./components/Footer"
 import LandingPageImage from "../public/landing.png"
+import LoginButton from "./components/LoginButton"
 
 export default function Home() {
   return (
@@ -29,6 +31,9 @@ export default function Home() {
                     and even people who don’t like to read.
                   </h1>
                 </div>
+                <Link href="/for-you">
+                  <LoginButton className="btn home__cta--btn" />
+                </Link>
               </div>
               <figure className="landing__image--mask relative w-full max-w-lg h-90 translate-x-24 md:translate-x-24 translate-y-18.75">
                 <Image src={LandingPageImage} alt="landing" fill sizes="(max-width: 1024px) 112px, 288px" style={{ objectFit: "contain" }} priority />
