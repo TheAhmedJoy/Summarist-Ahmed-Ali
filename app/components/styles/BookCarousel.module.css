@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 80%;
 }
 
 .track {
@@ -33,7 +33,7 @@
   z-index: 2;
   border: none;
   background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.25);
   border-radius: 999px;
   width: 2rem;
   height: 2rem;
@@ -53,12 +53,47 @@
   right: -1rem;
 }
 
-@media (max-width: 640px) {
-  .arrow {
-    display: none;
+@media (max-width:768px) {
+  .carousel {
+    width: 60%;
+    padding-right: 24px;
+    padding-left: 24px;
   }
-  .slide {
-    flex: 0 0 50%;
+
+  .arrowRight {
+    right: 2%
+  }
+}
+
+@media (max-width: 640px) {
+  .carousel {
+    width: 40%;
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  .arrowRight {
+    right: 20%
+  }
+
+  .arrowLeft {
+    left: 2%;
+  }
+}
+
+@media (max-width:550px) {
+  .carousel {
+    width: 60%;
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  .arrowRight {
+    right: 10%
+  }
+
+  .arrowLeft {
+    left: 2%;
   }
 }
 
@@ -68,12 +103,10 @@
   width: 180px;
   height: 280px;
   border-radius: 16px;
-  background: linear-gradient(
-    90deg,
-    #e5e7eb 0%,
-    #f3f4f6 50%,
-    #e5e7eb 100%
-  );
+  background: linear-gradient(90deg,
+      #e5e7eb 0%,
+      #f3f4f6 50%,
+      #e5e7eb 100%);
   background-size: 200% 100%;
   animation: skeleton-shimmer 1.2s ease-in-out infinite;
 }
@@ -82,6 +115,7 @@
   0% {
     background-position: 200% 0;
   }
+
   100% {
     background-position: -200% 0;
   }
