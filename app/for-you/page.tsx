@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 import { getRecommendedBooks, getSelectedBooks, getSuggestedBooks } from "../../util/API"
 import type { Book } from "../../util/API"
 import BookCarousel from "../components/BookCarousel"
-import styles from "./page.module.css"
+import styles from "../components/styles/ForYouPage.module.css"
 
 export default function ForYou() {
 

@@ -1,10 +1,11 @@
-
-
 .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-left: 18rem;
   margin-top: 4rem; 
   width: 100%;
-  max-width: 60rem;
+  max-width: 90rem;
 }
 .container {
   width: 75%;
