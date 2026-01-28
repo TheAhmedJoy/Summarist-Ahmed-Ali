@@ -1,0 +1,19 @@
+.summary {
+    position: relative;
+    width: 100%;
+    overflow-y: auto;
+    height: calc(100vh - 160px);
+    margin-left: 15rem;
+}
+
+.audio__book--summary {
+    white-space: pre-line;
+    padding: 1.5rem;
+    max-width: 800px;
+}
+
+@media (max-width : 768px) {
+    .summary {
+        margin: 0 auto
+    }
+}
