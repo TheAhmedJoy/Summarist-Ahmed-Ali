@@ -4,7 +4,6 @@
     justify-content: space-between;
     height: calc(100vh - 60px);
     padding-bottom: 1.25rem;
-    margin-top: 1rem;
     background-color: #f7faf9;
     width: 12.5rem;
     min-width: 12.5rem;
@@ -17,6 +16,11 @@
     flex-shrink: 0;
 }
 
+.nav__img {
+    padding-left: 32px;
+    padding-top: 16px;
+}
+
 .group {
     display: flex;
     flex-direction: column;
@@ -27,7 +31,6 @@
 .group1 {
     margin-top: 2rem;
 }
-
 
 .linkWrapper {
     display: flex;

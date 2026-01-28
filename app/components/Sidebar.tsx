@@ -51,7 +51,7 @@ export default function Sidebar({ isOpen, onCloseAction }: SidebarProps) {
             className={`${styles.sidebar} ${isOpen ? styles.open : styles.closed}`}
         >
             <Link href="/" className="nav__img--mask">
-                <Image className="nav__img" src={Logo} alt="logo" />
+                <Image className={styles.nav__img} src={Logo} alt="logo" />
             </Link>
             <div className={`${styles.group} ${styles.group1}`}>
                 <div className={styles.linkWrapper}>
