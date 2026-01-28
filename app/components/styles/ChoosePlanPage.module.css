@@ -1,0 +1,274 @@
+.wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    transition: all .3s;
+}
+
+.plan {
+    width: 100%;
+}
+
+.plan__header--wrapper {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    padding-top: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.plan__header--wrapper:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: #032b41;
+    border-bottom-right-radius: 16rem;
+    border-bottom-left-radius: 16rem;
+}
+
+.plan__header {
+    max-width: 1000px;
+    margin: 0 auto;
+    color: #fff;
+    padding: 0 1.5rempx;
+}
+
+.plan__title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+}
+
+.plan__sub--title {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.plan__img--mask {
+    display: flex;
+    justify-content: center;
+    max-width: 340px;
+    margin: 0 auto;
+    border-radius: 180px 180px 0 0;
+    overflow: hidden;
+}
+
+.plan__img--mask img {
+    width: 100%;
+    height: 100%;
+}
+
+.row {
+    max-width: 1070px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.container {
+    padding: 2.5rem 0;
+    width: 100%;
+}
+
+.plan__features--wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    text-align: center;
+    grid-gap: 1.5rem;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto 3.5rem;
+}
+
+.plan__features--icon {
+    display: flex;
+    justify-content: center;
+    color: #032b41;
+    margin-bottom: 0.75rem;
+}
+
+.plan__features--icon svg {
+    width: 3.75rem;
+    height: 3.75rem;
+}
+
+.plan__features--text {
+    color: #394547;
+    line-height: 1.5;
+}
+
+.section__title {
+    font-size: 2rem;
+    color: #032b41;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.plan__card {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background-color: #f1f6f4;
+    border: 4px solid #bac8ce;
+    border-radius: 4px;
+    cursor: pointer;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.plan__card--active {
+    border: 4px solid #2be080;
+}
+
+.plan__card--circle {
+    position: relative;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    border: 2px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.plan__card--dot {
+    position: absolute;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: #000;
+    border-radius: 50%;
+}
+
+.plan__card--title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #032b41;
+    margin-bottom: 0.5rem;
+}
+
+.plan__card--price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #032b41;
+    margin-bottom: 0.5rem;
+}
+
+.plan__card--text {
+    color: #6b757b;
+    font-size: 0.875rem;
+}
+
+.plan__card--separator {
+    font-size: 0.875rem;
+    color: #6b757b;
+    display: flex;
+    align-items: center;
+    gap: -.5rem;
+    max-width: 240px;
+    margin: 1.5rem auto;
+}
+
+.plan__card--separator:after, .plan__card--separator:before {
+    content: "";
+    flex-grow: 1;
+    height: 1px;
+    background: #bac8ce;
+}
+
+.plan__card--cta {
+    background: #fff;
+    position: sticky;
+    bottom: 0;
+    z-index: 1;
+    padding: 32px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.btn {
+    background-color: #2bd97c;
+    color: #032b41;
+    width: 100%;
+    padding: 0 1.5rem;
+    height: 2.5rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background-color .2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+    cursor: not-allowed;
+}
+
+.btn:hover {
+    background-color: #20ba68;
+}
+
+.plan__disclaimer {
+    font-size: 0.75rem;
+    color: #6b757b;
+    text-align: center;
+}
+
+.collapse {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    transition: height .35s ease;
+}
+
+.collapse.show {
+    height: auto;
+}
+
+.accordion__card {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+}
+
+.accordion__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 1.5rem 0;
+    gap: 0.5rem;
+}
+
+.accordion__title {
+    font-weight: 500;
+    font-size: 24px;
+    position: relative;
+    margin-bottom: 0;
+    color: #032b41;
+    transition: .3s;
+}
+
+.accordion__icon--rotate {
+    transform: rotate(180deg);
+}
+
+.accordion__icon {
+    width: 1.5rem;
+    min-width: 24px;
+    height: 1.5rem;
+    transition: smooth;
+}
+
+.accordion__body {
+    min-height: 1px;
+    padding-bottom: 1.5rem;
+    color: #394547;
+    line-height: 1.5;
+}
