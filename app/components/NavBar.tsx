@@ -30,6 +30,9 @@ export default function NavBar() {
 
   const handleLogout = async () => {
     try {
+      if (!auth) {
+        throw new Error("Firebase not initialized")
+      }
       await signOut(auth)
     } catch (error) { }
   }

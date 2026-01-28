@@ -31,6 +31,9 @@ export default function Sidebar({ isOpen, onCloseAction }: SidebarProps) {
 
         if (user) {
             try {
+                if (!auth) {
+                    throw new Error("Firebase not initialized")
+                }
                 await signOut(auth)
                 console.log("User signed out")
             } catch (error) {

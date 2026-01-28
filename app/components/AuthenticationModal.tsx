@@ -27,6 +27,9 @@ export default function AuthModal() {
 
     const handleGoogleAuth = async () => {
         try {
+            if (!auth || !googleProvider) {
+                throw new Error("Firebase not initialized")
+            }
             const result = await signInWithPopup(auth, googleProvider)
 
             dispatch(closeModal())
@@ -38,6 +41,9 @@ export default function AuthModal() {
 
     const handleGuestLogin = async () => {
         try {
+            if (!auth) {
+                throw new Error("Firebase not initialized")
+            }
             const result = await signInAnonymously(auth)
 
             console.log("Guest login success:", result.user)
@@ -60,6 +66,9 @@ export default function AuthModal() {
         }
 
         try {
+            if (!auth) {
+                throw new Error("Firebase not initialized")
+            }
             setSubmitting(true)
             setError(null)
 
@@ -85,6 +94,9 @@ export default function AuthModal() {
         }
 
         try {
+            if (!auth) {
+                throw new Error("Firebase not initialized")
+            }
             setSubmitting(true)
             setError(null)
 
