@@ -2,6 +2,7 @@ const RECOMMENDED_URL = "https://us-central1-summaristt.cloudfunctions.net/getBo
 const SUGGESTED_URL = "https://us-central1-summaristt.cloudfunctions.net/getBooks?status=suggested"
 const SELECTED_URL = "https://us-central1-summaristt.cloudfunctions.net/getBooks?status=selected"
 const BOOK_ID_BASE = "https://us-central1-summaristt.cloudfunctions.net/getBook"
+const SEARCH_BASE = "https://us-central1-summaristt.cloudfunctions.net/getBooksByAuthorOrTitle"
 
 if (!RECOMMENDED_URL) {
   throw new Error("Missing environment variable: NEXT_PUBLIC_API_RECOMMENDED")
@@ -45,8 +46,6 @@ export type SearchBook = {
   totalRating?: number
   duration: string
 }
-
-const SEARCH_BASE = process.env.NEXT_PUBLIC_API_SEARCH!
 
 export async function searchBooks(search: string, signal?: AbortSignal) {
   const q = search.trim()
