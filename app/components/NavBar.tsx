@@ -25,7 +25,7 @@ export default function NavBar() {
   }
 
   const appRoutes = ["/for-you", "/library", "/settings"]
-  const prefixRoutes = ["/book/"]
+  const prefixRoutes = ["/book/", "/player/"]
   const isAppRoute = appRoutes.includes(pathname)
 
   const handleLogout = async () => {
