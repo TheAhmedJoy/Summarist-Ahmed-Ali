@@ -1,0 +1,153 @@
+.settings {
+    width: 100%;
+    max-width: 62rem;
+    margin-left: 16rem;
+    padding: 2.5rem 1.5rem 4rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.75rem;
+    color: #0b2b3a;
+}
+
+.titleUnderline {
+    width: 9rem;
+    height: 0.2rem;
+    background: #8c8e8e;
+    border-radius: 999px;
+    margin-bottom: 2.5rem;
+}
+
+.loginCard {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 1rem 3rem;
+    gap: 1.25rem;
+}
+
+.loginImage {
+    width: min(30rem, 100%);
+    height: auto;
+    display: block;
+}
+
+.loginText {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0b2b3a;
+    text-align: center;
+    margin: 0;
+}
+
+.loginBtn {
+    appearance: none;
+    border: none;
+    background: #2bd97c;
+    color: #0b2b3a;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.85rem 2.5rem;
+    border-radius: 0.35rem;
+    cursor: pointer;
+    transition: transform 120ms ease, filter 120ms ease;
+}
+
+.loginBtn:hover {
+    filter: brightness(0.98);
+    transform: translateY(-1px);
+}
+
+.loginBtn:active {
+    transform: translateY(0);
+}
+
+.panel {
+    width: 100%;
+    max-width: 22rem;
+    margin: 0 auto;
+    padding-top: 0.5rem;
+}
+
+.sectionTitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.75rem;
+    color: #0b2b3a;
+}
+
+.panelUnderline {
+    width: 9rem;
+    height: 0.2rem;
+    background: #e6edf2;
+    border-radius: 999px;
+    margin-bottom: 1.75rem;
+}
+
+.sectionLabel {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0b2b3a;
+    margin: 0 0 0.4rem;
+}
+
+.valueText {
+    font-size: 1rem;
+    color: #0b2b3a;
+    margin: 0 0 1.25rem;
+}
+
+.divider {
+    width: 100%;
+    height: 0.1rem;
+    color: #e3e9e9;
+    background: #e6edf2;
+    border-radius: 999px;
+    margin: 1.25rem 0 1.25rem;
+}
+
+.upgradeBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: #2bd97c;
+    color: #0b2b3a;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.85rem 1.25rem;
+    border-radius: 0.35rem;
+    cursor: pointer;
+    transition: transform 120ms ease, filter 120ms ease;
+}
+
+.upgradeBtn:hover {
+    filter: brightness(0.98);
+    transform: translateY(-1px);
+}
+
+.upgradeBtn:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .settings {
+        padding: 2rem 1.25rem 3.5rem;
+        margin-left: 2rem;
+        justify-content: left;
+    }
+
+    .title {
+        font-size: 2.15rem;
+    }
+
+    .panelTitle {
+        font-size: 2rem;
+    }
+}
