@@ -1,7 +1,5 @@
 "use client"
 
-export const dynamic = "force-dynamic"
-
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import { getRecommendedBooks, getSelectedBooks, getSuggestedBooks } from "../../util/API"
