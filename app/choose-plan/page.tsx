@@ -4,6 +4,8 @@ import Image from "next/image"
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 import { useAuth } from "../Provideers/AuthenticationProvider"
+import { app } from "@/firebase/init"
+import { getCheckoutUrl } from "@/util/Stripe"
 import PricingImage from "../../public/pricing-top.png"
 import styles from "../components/styles/ChoosePlanPage.module.css"
 
@@ -28,6 +30,9 @@ export default function ChoosePlanPage() {
     if (user && isPremium)
         return null
 
+    const monthlyPriceId = process.env.NEXT_PUBLIC_MONTHLY_PRICE_ID as string
+    const yearlyPriceId = process.env.NEXT_PUBLIC_YEARLY_PRICE_ID as string
+
     const isYearly = activePlan === "yearly"
 
     const buttonText = isYearly
@@ -37,6 +42,19 @@ export default function ChoosePlanPage() {
     const disclaimerText = isYearly
         ? "Cancel your trial at any time before it ends, and you won’t be charged."
         : "30-day money back guarantee, no questions asked."
+
+    const checkoutHandler = async () => {
+        if (loading || !user) {
+            console.error("No user available. Please try again.")
+            return
+        }
+
+        const priceId = activePlan === "yearly" ? yearlyPriceId : monthlyPriceId
+
+        const checkoutUrl = await getCheckoutUrl(app, priceId)
+
+        window.open(checkoutUrl, "_blank")
+    }
 
     return (
         <div className={styles["wrapper"]}>
@@ -131,7 +149,7 @@ export default function ChoosePlanPage() {
                         </div>
                         <div className={styles["plan__card--cta"]}>
                             <span className={styles["btn__wrapper"]}>
-                                <button className={styles["btn"]}>
+                                <button className={styles["btn"]} onClick={checkoutHandler}>
                                     {buttonText}
                                 </button>
                             </span>
