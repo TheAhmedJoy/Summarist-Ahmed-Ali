@@ -1,14 +1,29 @@
 "use client"
 
 import Link from "next/link"
+import { useEffect, useState } from "react"
 import { useDispatch } from "react-redux"
 import { useAuth } from "../Provideers/AuthenticationProvider"
 import { openLogin } from "../Redux/AuthenticationModalSlice"
+import { getPremiumStatus } from "@/util/Stripe"
+import { app } from "@/firebase/init"
 import styles from "../components/styles/Settings.module.css"
 
 export default function SettingsPage() {
-    const { user, loading, isPremium } = useAuth()
+    
+    const { user, loading } = useAuth()
+
+    const [premiumStatus, setPremiumStatus] = useState(false)
+
     const dispatch = useDispatch()
+
+    useEffect(() => {
+        const checkPremium = async () => {
+            const userPremiumStatus = user ? await getPremiumStatus(app) : false
+            setPremiumStatus(userPremiumStatus)
+        }
+        checkPremium()
+    }, [app, user?.uid])
 
     if (loading)
         return null
@@ -32,7 +47,7 @@ export default function SettingsPage() {
         )
     }
 
-    const planLabel = isPremium ? "premium" : "Basic"
+    const planLabel = premiumStatus ? "Premium" : "Basic"
 
     return (
         <div className={styles.settings}>
@@ -43,7 +58,7 @@ export default function SettingsPage() {
                 <div className={styles.sectionTitle}>
                     Your Subscription plan
                 </div>
-                {!isPremium ?
+                {!premiumStatus ?
                     (
                         <>
                             <div className={styles.value}>{planLabel}</div>
