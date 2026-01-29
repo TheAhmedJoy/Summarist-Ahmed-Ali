@@ -207,7 +207,6 @@
     align-items: center;
     justify-content: center;
     min-width: 180px;
-    cursor: not-allowed;
 }
 
 .btn:hover {
