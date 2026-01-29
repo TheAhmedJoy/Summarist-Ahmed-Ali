@@ -13,10 +13,10 @@ const firebaseConfig = {
 };
 
 // Only initialize Firebase in the browser
-let app: FirebaseApp | undefined;
-let auth: Auth | undefined;
-let googleProvider: GoogleAuthProvider | undefined;
-let db: Firestore | undefined;
+let app: FirebaseApp
+let auth: Auth
+let googleProvider: GoogleAuthProvider
+let db: Firestore
 
 if (typeof window !== "undefined") {
   app = !getApps().length ? initializeApp(firebaseConfig) : getApps()[0];
@@ -25,4 +25,4 @@ if (typeof window !== "undefined") {
   db = getFirestore(app);
 }
 
-export { auth, googleProvider, db };
+export { app, auth, googleProvider, db };
