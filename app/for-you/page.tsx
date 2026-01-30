@@ -96,7 +96,7 @@ export default function ForYou() {
               </div>
             </Link>
           ) : null}
-          <div>
+          <div className={styles.foryou__recommended_container}>
             <div className={styles.foryou__title}>
               Recommended For You
             </div>

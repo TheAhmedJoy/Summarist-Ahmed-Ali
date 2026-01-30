@@ -1,10 +1,8 @@
 .for-you__recommended--books {
     display: flex;
     overflow-x: auto;
-    gap: 1rem;
     scroll-snap-type: mandatory;
     scroll-snap-type: x;
-    margin-bottom: 2rem;
 }
 
 .for-you__recommended--books::-webkit-scrollbar {
@@ -14,7 +12,6 @@
 .for-you__recommended--books-link {
     position: relative;
     scroll-snap-align: start;
-    padding: 2rem 1rem 1rem;
     text-decoration: none;
     border-radius: 4px;
     max-width: 200px;

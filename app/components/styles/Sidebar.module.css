@@ -100,7 +100,7 @@
     cursor: pointer;
 }
 
-@media (max-width: 48rem) {
+@media (max-width: 550px) {
     .sidebar {
         position: fixed;
         top: 0;
