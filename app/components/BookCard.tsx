@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Book } from "@/util/API";
 import styles from "./styles/BookCard.module.css"
-// import AudioDuration from "./AudioDuration";
+import BookDuration from "./BookDuration";
 
 interface BookCardProps {
     book: Book;
@@ -39,7 +39,7 @@ export default function BookCard({ book }: BookCardProps) {
                             </svg>
                         </div>
                         <div className={styles["recommended__book--details-text"]}>
-                            {/* <AudioDuration audioLink={book.audioLink} /> */}
+                            <BookDuration audioLink={book.audioLink} />
                         </div>
                     </div>
                     <div className={styles["recommended__book--details"]}>
