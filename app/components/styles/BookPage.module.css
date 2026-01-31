@@ -257,14 +257,27 @@
     }
 }
 
-
 @media (max-width: 550px) {
     .row {
-        margin-left: 0rem;
+        margin-left: 2rem;
+    }
+
+    .inner__book {
+        max-width: 50%;
     }
 
     .book__image--wrapper {
         max-width: 100%;
         max-height: 100%;
+    }
+}
+
+@media (max-width: 320px) {
+    .inner__book {
+        max-width: 30%;
+    }
+
+    .inner-book__read--btn-wrapper {
+        flex-direction: column;
     }
 }

@@ -971,3 +971,14 @@ button:disabled {
     width: fit-content;
   }
 }
+
+@media (max-width: 320px) {
+  .search__icon svg{
+    width: 18px;
+    height: 18px;
+  }
+
+  .nav__search--input {
+    font-size: 6px;
+  }
+}
