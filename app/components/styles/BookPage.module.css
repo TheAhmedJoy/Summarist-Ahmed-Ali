@@ -23,7 +23,8 @@
     font-size: 2rem;
 }
 
-.inner-book__author, .inner-book__title {
+.inner-book__author,
+.inner-book__title {
     color: #032b41;
     margin-bottom: 1rem;
     font-weight: 600;
@@ -216,7 +217,7 @@
 
 @media (max-width: 768px) {
     .row {
-        margin-left: 5rem;
+        margin-left: 16rem;
     }
 
     .inner-book__book--description {
@@ -227,5 +228,43 @@
     .inner-book__author--description {
         max-width: 300px;
         flex-wrap: wrap;
+    }
+
+    .book__image--wrapper {
+        width: 15em;
+        height: 15rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .row {
+        margin-left: 16rem;
+    }
+
+    .inner-book__book--description {
+        max-width: 300px;
+        flex-wrap: wrap;
+    }
+
+    .inner-book__author--description {
+        max-width: 300px;
+        flex-wrap: wrap;
+    }
+
+    .book__image--wrapper {
+        width: 10rem;
+        height: 10rem;
+    }
+}
+
+
+@media (max-width: 550px) {
+    .row {
+        margin-left: 0rem;
+    }
+
+    .book__image--wrapper {
+        max-width: 100%;
+        max-height: 100%;
     }
 }
